@@ -1,4 +1,4 @@
-name: x-python
+name: x-python-flask
 channels:
   - defaults
 dependencies:
