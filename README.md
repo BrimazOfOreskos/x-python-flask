@@ -1,5 +1,5 @@
-# Example - Python
-A template repository for jump-starting development of Python packages
+# Example - Python/Flask
+A template repository for jump-starting development of Python/Flask web services
 
 ## Development
 
@@ -67,6 +67,37 @@ Run unit tests, check for code coverage, generate a browsable coverage report:
 pytest --cov=example --cov-report=html
 ```
 
+### Run the Service
+
+#### Using Flask Development Server
+Change into the `src/` directory:
+```shell
+cd src/
+```
+
+Set the FLASK_APP and LOG_LEVEL environment variables then start the service:
+```shell
+FLASK_APP=example.app \
+LOG_LEVEL=INFO \
+flask run
+```
+
+> The Flask development server should only be used in a development environment.
+> You should front the service with a production-ready WSGI server (see
+> [Using GUnicorn](#using-gunicorn)) and reverse proxy.
+
+#### Using GUnicorn
+Change into the `src/` directory:
+```shell
+cd src/
+```
+
+Set the LOG_LEVEL environment variable then start the service:
+```shell
+LOG_LEVEL=INFO \
+gunicorn -b 0.0.0.0:5000 -w 2 "example.app:create_app()"
+```
+
 ### Apply Code Formatting
 Having a scripted code formatting tool improves readability and ensures
 compliance with PEP. This project uses `black` to apply code style and
@@ -108,17 +139,17 @@ pip install dist/example-0.1.0-py3-none-any.whl
 Install from GitHub:
 ```shell
 # Install from a .whl file hosted on a GitHub Release page
-pip install https://github.com/BrimazOfOreskos/x-python/releases/download/0.1.0/example-0.1.0-py3-none-any.whl
+pip install https://github.com/BrimazOfOreskos/x-python-flask/releases/download/0.1.0/example-0.1.0-py3-none-any.whl
 
 # Install the package as it exists on the default branch
-pip install git+ssh://github.com/BrimazOfOreskos/x-python.git
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git
 
 # Install the package as it exists on a specific branch or tag
-pip install git+ssh://github.com/BrimazOfOreskos/x-python.git@develop
-pip install git+ssh://github.com/BrimazOfOreskos/x-python.git@0.1.0
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@develop
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@0.1.0
 
 # Install the package as it exists at a specific commit
-pip install git+ssh://github.com/BrimazOfOreskos/x-python.git@26b0e55fcdcb009e2bf523cc7aba51c438e38ec2
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@c1f77a73923dbd93143c40cc7668832254651864
 ```
 
 [//]: # (TODO: Write "Install from Package Index" section.)

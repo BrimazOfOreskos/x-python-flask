@@ -1,4 +1,4 @@
-name: x-python
+name: x-python-flask
 channels:
   - defaults
 dependencies:
@@ -29,7 +29,13 @@ dependencies:
     - build==0.7.0
     - click==8.0.3
     - coverage==6.2
+    - dependency-injector==4.37.0
+    - flask==2.0.2
+    - gunicorn==20.1.0
     - iniconfig==1.1.1
+    - itsdangerous==2.0.1
+    - jinja2==3.0.3
+    - markupsafe==2.0.1
     - mypy-extensions==0.4.3
     - packaging==21.3
     - pathspec==0.9.0
@@ -37,9 +43,12 @@ dependencies:
     - platformdirs==2.4.1
     - pluggy==1.0.0
     - py==1.11.0
+    - pydantic==1.9.0
     - pyparsing==3.0.6
     - pytest==6.2.5
     - pytest-cov==3.0.0
+    - six==1.16.0
     - toml==0.10.2
     - tomli==1.2.3
     - typing-extensions==4.0.1
+    - werkzeug==2.0.2
