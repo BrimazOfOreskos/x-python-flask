@@ -9,5 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [CHANGELOG](CHANGELOG.md) (this file) to track changes to the project over time.
 - [README](README.md) to provide basic project documentation.
 - Python project structural files.
+- Flask application stub.
 
 [Unreleased]: https://github.com/BrimazOfOreskos/x-python-flask/compare/main...develop

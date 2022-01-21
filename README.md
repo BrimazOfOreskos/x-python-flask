@@ -67,6 +67,37 @@ Run unit tests, check for code coverage, generate a browsable coverage report:
 pytest --cov=example --cov-report=html
 ```
 
+### Run the Service
+
+#### Using Flask Development Server
+Change into the `src/` directory:
+```shell
+cd src/
+```
+
+Set the FLASK_APP and LOG_LEVEL environment variables then start the service:
+```shell
+FLASK_APP=example.app \
+LOG_LEVEL=INFO \
+flask run
+```
+
+> The Flask development server should only be used in a development environment.
+> You should front the service with a production-ready WSGI server (see
+> [Using GUnicorn](#using-gunicorn)) and reverse proxy.
+
+#### Using GUnicorn
+Change into the `src/` directory:
+```shell
+cd src/
+```
+
+Set the LOG_LEVEL environment variable then start the service:
+```shell
+LOG_LEVEL=INFO \
+gunicorn -b 0.0.0.0:5000 -w 2 "example.app:create_app()"
+```
+
 ### Apply Code Formatting
 Having a scripted code formatting tool improves readability and ensures
 compliance with PEP. This project uses `black` to apply code style and
