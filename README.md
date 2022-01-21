@@ -133,19 +133,23 @@ be installed directly via `pip`.
 
 Install from local `.whl` file:
 ```shell
-pip install dist/example-0.0.0-py3-none-any.whl
+pip install dist/example-0.1.0-py3-none-any.whl
 ```
 
 Install from GitHub:
 ```shell
+# Install from a .whl file hosted on a GitHub Release page
+pip install https://github.com/BrimazOfOreskos/x-python-flask/releases/download/0.1.0/example-0.1.0-py3-none-any.whl
+
 # Install the package as it exists on the default branch
 pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git
 
 # Install the package as it exists on a specific branch or tag
 pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@develop
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@0.1.0
 
 # Install the package as it exists at a specific commit
-pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@<commit-hash>
+pip install git+ssh://github.com/BrimazOfOreskos/x-python-flask.git@c1f77a73923dbd93143c40cc7668832254651864
 ```
 
 [//]: # (TODO: Write "Install from Package Index" section.)
